@@ -4,7 +4,7 @@
 #include "imgproc.hh"
 
 #include <vector>
-#include <Eigen/Dense>
+#include <eigen3/Eigen/Dense>
 /*
  *#include <opencv2/core.hpp>
  *#include <opencv2/calib3d/calib3d.hpp>

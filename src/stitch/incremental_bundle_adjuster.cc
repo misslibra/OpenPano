@@ -3,7 +3,7 @@
 
 #include "incremental_bundle_adjuster.hh"
 
-#include <Eigen/Dense>
+#include <eigen3/Eigen/Dense>
 #include <cmath>
 #include <memory>
 #include <array>

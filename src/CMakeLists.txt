@@ -12,17 +12,29 @@ if(JPEG_FOUND)
 	include_directories(${JPEG_INCLUDE_DIR})
 endif()
 
-find_package(Eigen3 REQUIRED)
+# find_package(Eigen3 REQUIRED)##cindy
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/eigen3/cmake)##cindy
+find_package(Eigen3 REQUIRED)
+
+if(Eigen3_FOUND)##cindy
+	message(WARNING "eigen3 found ----.")
+	include_directories(${Eigen3_INCLUDE_DIR})##cindy
+endif()##cindy
+
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third-party/)
 
 # find sources
 file(GLOB SOURCES feature/*.cc stitch/*.cc lib/*.cc)
-
+ 
 
 add_library(openpano ${SOURCES})	# TODO shared?
-target_link_libraries(openpano ${JPEG_LIBRARY} lodepng Eigen3::Eigen)
+# target_link_libraries(openpano ${JPEG_LIBRARY} lodepng Eigen3::Eigen)
+target_link_libraries(openpano ${JPEG_LIBRARY} lodepng ${Eigen3_INCLUDE_DIR})
+# 
 
+
+# add_executable(image-stitching ${SOURCES})## cindy
 add_executable(image-stitching main.cc)
 target_link_libraries(image-stitching openpano)
 

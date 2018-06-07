@@ -6,7 +6,7 @@
 
 #include <algorithm>
 #include <memory>
-#include <Eigen/Dense>
+#include <eigen3/Eigen/Dense>
 
 #include "geometry.hh"
 #include "timer.hh"

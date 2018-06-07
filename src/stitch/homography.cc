@@ -3,7 +3,7 @@
 
 #include "homography.hh"
 
-#include <Eigen/Dense>
+#include <eigen3/Eigen/Dense>
 #include <vector>
 
 #include "lib/matrix.hh"

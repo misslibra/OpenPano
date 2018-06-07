@@ -7,7 +7,7 @@
 #pragma once
 #include <vector>
 #include <set>
-#include <Eigen/Dense>
+#include <eigen3/Eigen/Dense>
 
 #include "lib/mat.h"
 #include "lib/utils.hh"
